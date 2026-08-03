@@ -183,14 +183,28 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ---------- Mobile nav toggle ---------- */
   const toggle = document.querySelector('.nav-toggle');
   const nav = document.querySelector('.main-nav');
+  let scrollLockY = 0;
+  const lockScroll = () => {
+    scrollLockY = window.scrollY;
+    document.body.classList.add('nav-locked');
+    document.body.style.top = `-${scrollLockY}px`;
+  };
+  const unlockScroll = () => {
+    document.body.classList.remove('nav-locked');
+    document.body.style.top = '';
+    window.scrollTo(0, scrollLockY);
+  };
   toggle?.addEventListener('click', () => {
+    const opening = !nav.classList.contains('is-open');
     toggle.classList.toggle('is-open');
     nav.classList.toggle('is-open');
+    if (opening) lockScroll(); else unlockScroll();
   });
   nav?.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
       toggle?.classList.remove('is-open');
       nav.classList.remove('is-open');
+      unlockScroll();
     });
   });
 
@@ -260,15 +274,51 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ---------- Contact form (demo submit) ---------- */
+  /* ---------- Contact form (real Formspree submission) ---------- */
   const form = document.getElementById('contact-form');
   if (form) {
-    form.addEventListener('submit', (e) => {
+    const success = document.querySelector('.form-success');
+    const submitBtn = form.querySelector('button[type="submit"]');
+    let errorBox = form.querySelector('.form-error');
+    if (!errorBox) {
+      errorBox = document.createElement('div');
+      errorBox.className = 'form-error';
+      errorBox.setAttribute('role', 'alert');
+      form.appendChild(errorBox);
+    }
+
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const success = document.querySelector('.form-success');
-      success?.classList.add('is-visible');
-      form.reset();
-      success?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      errorBox.classList.remove('is-visible');
+      success?.classList.remove('is-visible');
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.style.opacity = '.6'; }
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          success?.classList.add('is-visible');
+          form.reset();
+          success?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          const data = await response.json().catch(() => null);
+          const msg = data?.errors?.map(err => err.message).join(', ')
+            || 'Something went wrong sending your enquiry. Please try again, or email us directly.';
+          errorBox.textContent = msg;
+          errorBox.classList.add('is-visible');
+          errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      } catch (err) {
+        errorBox.textContent = 'Could not reach the server. Please check your connection and try again, or email us directly.';
+        errorBox.classList.add('is-visible');
+        errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } finally {
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.style.opacity = ''; }
+      }
     });
   }
 

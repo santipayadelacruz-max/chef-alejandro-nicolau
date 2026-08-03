@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chefalejandronicolau.co.uk/sitemap.xml
