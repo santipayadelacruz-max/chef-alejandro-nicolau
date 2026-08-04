@@ -306,10 +306,13 @@ p{margin:0;}
 .hero-media{
   position:relative;
   overflow:hidden;
+  padding:22px 26px 22px 14px;
+  box-sizing:border-box;
 }
 .hero-media img{
   width:100%; height:100%;
   object-fit:cover;
+  border-radius:18px;
 }
 
 /* ---------- Duotone reveal: black & white on load, colour on scroll ---------- */
@@ -326,7 +329,8 @@ p{margin:0;}
 }
 .hero-media::after{
   content:"";
-  position:absolute; inset:0;
+  position:absolute; inset:22px 26px 22px 14px;
+  border-radius:18px;
   background:linear-gradient(90deg, rgba(15,22,32,.55), transparent 30%);
 }
 .scroll-cue{
@@ -348,7 +352,8 @@ p{margin:0;}
 @media (max-width:920px){
   .hero{grid-template-columns:1fr; grid-template-rows:auto 46vh;}
   .hero-copy{padding-top:130px; order:1;}
-  .hero-media{order:2; min-height:46vh;}
+  .hero-media{order:2; min-height:46vh; padding:0 var(--pad-side) 26px;}
+  .hero-media::after{inset:0 var(--pad-side) 26px;}
 }
 
 /* ============================================================
@@ -413,9 +418,13 @@ section{padding:120px 0;}
   align-items:center;
   gap:0;
 }
-.split-media{position:relative; overflow:hidden; aspect-ratio:4/5;}
+.split-media{position:relative; overflow:hidden; aspect-ratio:4/5; border-radius:16px;}
 .split-media img{width:100%;height:100%;object-fit:cover; transition:transform .8s var(--ease);}
 .split-media:hover img{transform:scale(1.06);}
+.split > .split-media{margin:28px;}
+@media (max-width:860px){
+  .split > .split-media{margin:24px var(--pad-side) 0;}
+}
 .split-copy{padding:0 clamp(28px,6vw,96px);}
 .split-copy p + p{margin-top:16px;}
 .split-copy .stat-row{display:flex; gap:48px; margin-top:44px; flex-wrap:wrap;}
@@ -647,7 +656,7 @@ section{padding:120px 0;}
 .menu-item{display:flex; gap:24px;}
 .menu-item figure{
   margin:0; flex:0 0 140px; width:140px; height:140px;
-  overflow:hidden; border-radius:2px;
+  overflow:hidden; border-radius:12px;
 }
 .menu-item img{width:100%;height:100%;object-fit:cover;}
 .menu-item .txt h4{font-size:1.28rem;}
@@ -1131,7 +1140,7 @@ body.custom-cursor input, body.custom-cursor textarea, body.custom-cursor select
 .dish-marquee.is-ready{animation-play-state:running;}
 .dish-marquee-wrap:hover .dish-marquee.is-ready{animation-play-state:paused;}
 .dish-marquee .card{width:min(300px,72vw); flex:0 0 auto;}
-.dish-marquee .card figure{margin:0; overflow:hidden; aspect-ratio:3/4;}
+.dish-marquee .card figure{margin:0; overflow:hidden; aspect-ratio:3/4; border-radius:14px;}
 .dish-marquee .card img{width:100%; height:100%; object-fit:cover; transition:transform .7s var(--ease);}
 .dish-marquee .card:hover img{transform:scale(1.07);}
 .dish-marquee .card figcaption{
