@@ -208,29 +208,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ---------- Duotone photos: black & white on load, colour on scroll ---------- */
-  const heroDuotone = document.querySelector('.is-hero-duotone');
-  if (heroDuotone) {
-    if (reduceMotion) {
-      heroDuotone.classList.add('is-color');
-    } else {
-      let heroColored = false;
-      const revealHeroColor = () => {
-        if (heroColored) return;
-        if (window.scrollY > 60) {
-          heroDuotone.classList.add('is-color');
-          heroColored = true;
-          window.removeEventListener('scroll', revealHeroColor);
-        }
-      };
-      window.addEventListener('scroll', revealHeroColor, { passive: true });
-      revealHeroColor();
-    }
-  }
-  const otherDuotones = document.querySelectorAll('.duotone-photo:not(.is-hero-duotone)');
-  if (otherDuotones.length) {
+  /* ---------- Duotone photos: black & white on load, colour on scroll into view ---------- */
+  const duotonePhotos = document.querySelectorAll('.duotone-photo');
+  if (duotonePhotos.length) {
     if (reduceMotion || !('IntersectionObserver' in window)) {
-      otherDuotones.forEach(el => el.classList.add('is-color'));
+      duotonePhotos.forEach(el => el.classList.add('is-color'));
     } else {
       const duotoneIo = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -240,7 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
       }, { threshold: 0.3, rootMargin: '0px 0px -10% 0px' });
-      otherDuotones.forEach(el => duotoneIo.observe(el));
+      duotonePhotos.forEach(el => duotoneIo.observe(el));
     }
   }
 
