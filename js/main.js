@@ -1,3 +1,16 @@
+/* ---------- Safety net: always restore full opacity when a page is shown ----------
+   Fixes a mobile bug where swiping/navigating "back" restores the page from the
+   browser's bfcache while it's still mid-fade-out (opacity: 0), leaving a blank
+   screen. This runs outside DOMContentLoaded so it fires even on instant bfcache
+   restores, and covers both the initial load and any later back/forward nav. */
+window.addEventListener('pageshow', () => {
+  document.body.style.transition = 'none';
+  document.body.style.opacity = '1';
+  document.body.classList.remove('is-navigating');
+  // re-enable transitions on the next frame so future fades still animate
+  requestAnimationFrame(() => { document.body.style.transition = ''; });
+});
+
 document.addEventListener('DOMContentLoaded', () => {
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -102,10 +115,20 @@ document.addEventListener('DOMContentLoaded', () => {
       const href = a.getAttribute('href');
       if (!href || href.startsWith('http') || a.target === '_blank') return;
       e.preventDefault();
+      document.body.classList.add('is-navigating');
       document.body.style.transition = 'opacity .35s ease';
       document.body.style.opacity = '0';
       setTimeout(() => { window.location.href = href; }, 320);
     });
+  });
+
+  /* ---------- Extra safety: if the browser restores this exact page from
+     bfcache instead of firing a fresh navigation (e.g. swipe-back on mobile),
+     make sure it's never left invisible. ---------- */
+  window.addEventListener('pagehide', () => {
+    document.body.style.transition = '';
+    document.body.style.opacity = '';
+    document.body.classList.remove('is-navigating');
   });
 
   /* ---------- Sliding nav underline indicator ---------- */
