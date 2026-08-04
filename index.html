@@ -27,7 +27,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+SC:wght@500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/main.css">
 <link rel="preload" as="image" href="images/chef-plating-floral-backdrop.jpg" fetchpriority="high">
-<noscript><style>.reveal,.reveal-wipe,.reveal-scale{opacity:1 !important;transform:none !important;clip-path:none !important;}.page-curtain{display:none !important;}</style></noscript>
+<link rel="preload" as="image" href="images/chef-luxury-kitchen-prep.jpg" fetchpriority="high">
+<noscript><style>.reveal,.reveal-wipe,.reveal-scale{opacity:1 !important;transform:none !important;clip-path:none !important;}.page-curtain{display:none !important;}.dish-marquee{animation-play-state:running !important;}.duotone-photo{filter:none !important;}</style></noscript>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -75,7 +76,6 @@
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="menu.html">Menus</a></li>
       <li><a href="spanish-heritage.html">Spanish Heritage</a></li>
-      <li><a href="bakery.html">Bakery</a></li>
       <li><a href="events.html">Events</a></li>
       <li><a href="reviews.html">Reviews</a></li>
       <li><a href="contact.html">Contact</a></li>
@@ -99,7 +99,7 @@
     </div>
   </div>
   <div class="hero-media">
-    <img src="images/chef-plating-floral-backdrop.jpg" alt="Alejandro Nicolau plating dishes, with autumn florals in the foreground" width="490" height="639" fetchpriority="high" decoding="async">
+    <img class="duotone-photo is-hero-duotone" src="images/chef-plating-floral-backdrop.jpg" alt="Alejandro Nicolau plating dishes, with autumn florals in the foreground" width="490" height="639" fetchpriority="high" decoding="async">
   </div>
   <a href="#marquee-strip" class="scroll-cue" aria-label="Scroll to discover more"><span>Discover</span><span class="line"></span></a>
 </section>
@@ -108,25 +108,25 @@
 <div id="marquee-strip" class="texture-panel marquee-wrap">
   <span class="press-label">As Featured In</span>
   <div class="marquee">
-    <img src="images/press/evening-standard.png" alt="Evening Standard" loading="lazy">
-    <img src="images/press/the-independent.png" alt="The Independent" loading="lazy">
-    <img src="images/press/bbc.png" alt="BBC" loading="lazy">
-    <img src="images/press/the-grocer.png" alt="The Grocer" loading="lazy">
-    <img src="images/press/the-times.png" alt="The Times" loading="lazy">
-    <img src="images/press/the-guardian.png" alt="The Guardian" loading="lazy">
-    <img src="images/press/evening-standard.png" alt="Evening Standard" loading="lazy">
-    <img src="images/press/the-independent.png" alt="The Independent" loading="lazy">
-    <img src="images/press/bbc.png" alt="BBC" loading="lazy">
-    <img src="images/press/the-grocer.png" alt="The Grocer" loading="lazy">
-    <img src="images/press/the-times.png" alt="The Times" loading="lazy">
-    <img src="images/press/the-guardian.png" alt="The Guardian" loading="lazy">
+    <img src="images/press/evening-standard.png" alt="Evening Standard">
+    <img src="images/press/the-independent.png" alt="The Independent">
+    <img src="images/press/bbc.png" alt="BBC">
+    <img src="images/press/the-grocer.png" alt="The Grocer">
+    <img src="images/press/the-times.png" alt="The Times">
+    <img src="images/press/the-guardian.png" alt="The Guardian">
+    <img src="images/press/evening-standard.png" alt="Evening Standard">
+    <img src="images/press/the-independent.png" alt="The Independent">
+    <img src="images/press/bbc.png" alt="BBC">
+    <img src="images/press/the-grocer.png" alt="The Grocer">
+    <img src="images/press/the-times.png" alt="The Times">
+    <img src="images/press/the-guardian.png" alt="The Guardian">
   </div>
 </div>
 
 <!-- ABOUT SPLIT -->
 <section class="split bg-stone">
   <div class="split-media reveal-wipe">
-    <img src="images/chef-luxury-kitchen-prep.jpg" alt="Alejandro Nicolau preparing canapés in a client's kitchen" width="577" height="727" decoding="async" loading="lazy" decoding="async">
+    <img class="duotone-photo" src="images/chef-luxury-kitchen-prep.jpg" alt="Alejandro Nicolau preparing canapés in a client's kitchen" width="577" height="727" decoding="async" fetchpriority="high">
   </div>
   <div class="split-copy reveal reveal-delay-1">
     <span class="eyebrow">Origins</span>
@@ -202,212 +202,160 @@
   <div class="dish-marquee-wrap reveal">
     <div class="dish-marquee">
         <div class="card tilt-card">
-          <figure><img src="images/wagyu-caviar-truffle-nigiri.jpg" alt="Wagyu nigiri with caviar and truffle" loading="lazy"></figure>
-          <figcaption>Wagyu Nigiri · Caviar · Truffle</figcaption>
+          <figure><img src="images/wagyu-caviar-truffle-nigiri.jpg" alt="Wagyu nigiri with caviar and truffle"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/scallop-caviar-mango.jpg" alt="Scallop with caviar and mango" loading="lazy"></figure>
-          <figcaption>Scallop · Caviar · Mango</figcaption>
+          <figure><img src="images/scallop-caviar-mango.jpg" alt="Scallop with caviar and mango"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/foie-gras-truffle.jpg" alt="Foie gras with shaved truffle" loading="lazy"></figure>
-          <figcaption>Foie Gras · Shaved Truffle</figcaption>
+          <figure><img src="images/foie-gras-truffle.jpg" alt="Foie gras with shaved truffle"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/salmon-caviar-herb-sauce.jpg" alt="Salmon with caviar and herb sauce" loading="lazy"></figure>
-          <figcaption>Salmon · Clam · Caviar</figcaption>
+          <figure><img src="images/salmon-caviar-herb-sauce.jpg" alt="Salmon with caviar and herb sauce"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/pork-belly-truffle-chanterelle.jpg" alt="Pork belly with truffle and chanterelles" loading="lazy"></figure>
-          <figcaption>Pork Belly · Chanterelle · Truffle</figcaption>
+          <figure><img src="images/pork-belly-truffle-chanterelle.jpg" alt="Pork belly with truffle and chanterelles"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/ceviche-seabass-flowers.jpg" alt="Sea bass ceviche with edible flowers" loading="lazy"></figure>
-          <figcaption>Sea Bass Ceviche</figcaption>
+          <figure><img src="images/ceviche-seabass-flowers.jpg" alt="Sea bass ceviche with edible flowers"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/burrata-prosciutto-peas.jpg" alt="Burrata with prosciutto and peas" loading="lazy"></figure>
-          <figcaption>Burrata · Prosciutto · Peas</figcaption>
+          <figure><img src="images/burrata-prosciutto-peas.jpg" alt="Burrata with prosciutto and peas"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/chocolate-dessert-caramel.jpg" alt="Chocolate dessert with salted caramel" loading="lazy"></figure>
-          <figcaption>Chocolate · Salted Caramel</figcaption>
+          <figure><img src="images/chocolate-dessert-caramel.jpg" alt="Chocolate dessert with salted caramel"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/jamon-iberico-caviar-canape.jpg" alt="Jamón ibérico canapés with caviar" loading="lazy"></figure>
-          <figcaption>Jamón Ibérico · Caviar</figcaption>
+          <figure><img src="images/jamon-iberico-caviar-canape.jpg" alt="Jamón ibérico canapés with caviar"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/dish-edible-flowers.jpg" alt="Dish styled with edible flowers" loading="lazy"></figure>
-          <figcaption>Garden Flowers · Citrus Cream</figcaption>
+          <figure><img src="images/dish-edible-flowers.jpg" alt="Dish styled with edible flowers"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/burrata-tomato-plates.jpg" alt="Burrata with heirloom tomatoes" loading="lazy"></figure>
-          <figcaption>Burrata · Heirloom Tomato</figcaption>
+          <figure><img src="images/burrata-tomato-plates.jpg" alt="Burrata with heirloom tomatoes"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/canape-variety-tray.jpg" alt="Selection of savoury canapés with caviar and crab" loading="lazy"></figure>
-          <figcaption>Crab &amp; Beef Tartare</figcaption>
+          <figure><img src="images/canape-variety-tray.jpg" alt="Selection of savoury canapés with caviar and crab"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/fish-carpaccio-caviar-mango.jpg" alt="Fish carpaccio with caviar and mango" loading="lazy"></figure>
-          <figcaption>Fish Carpaccio · Mango</figcaption>
+          <figure><img src="images/fish-carpaccio-caviar-mango.jpg" alt="Fish carpaccio with caviar and mango"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/onion-grape-borage.jpg" alt="Charred onion with grape and borage flowers" loading="lazy"></figure>
-          <figcaption>Charred Onion · Grape</figcaption>
+          <figure><img src="images/onion-grape-borage.jpg" alt="Charred onion with grape and borage flowers"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/tartlet-caviar-grain-display.jpg" alt="Caviar and onion jam tartlet" loading="lazy"></figure>
-          <figcaption>Caviar Tartlet</figcaption>
+          <figure><img src="images/tartlet-caviar-grain-display.jpg" alt="Caviar and onion jam tartlet"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/wagyu-caviar-canape-tray.jpg" alt="Wagyu beef canapés with caviar" loading="lazy"></figure>
-          <figcaption>Wagyu · Caviar Canapé</figcaption>
+          <figure><img src="images/wagyu-caviar-canape-tray.jpg" alt="Wagyu beef canapés with caviar"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/dessert-plating-service.jpg" alt="Raspberry and rose dome dessert" loading="lazy"></figure>
-          <figcaption>Raspberry &amp; Rose Dome</figcaption>
+          <figure><img src="images/dessert-plating-service.jpg" alt="Raspberry and rose dome dessert"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/dessert-pavlova.jpg" alt="Strawberry and meringue pavlova" loading="lazy"></figure>
-          <figcaption>Strawberry Pavlova</figcaption>
+          <figure><img src="images/dessert-pavlova.jpg" alt="Strawberry and meringue pavlova"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/dessert-peach-flowers.jpg" alt="Peach dessert with edible flowers" loading="lazy"></figure>
-          <figcaption>Peach · Yoghurt Sorbet</figcaption>
+          <figure><img src="images/dessert-peach-flowers.jpg" alt="Peach dessert with edible flowers"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/langoustine-caviar-dish.jpg" alt="Langoustine tails with caviar" loading="lazy"></figure>
-          <figcaption>Langoustine · Caviar</figcaption>
+          <figure><img src="images/langoustine-caviar-dish.jpg" alt="Langoustine tails with caviar"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/fish-cream-sauce.jpg" alt="White fish with creamy beurre blanc sauce" loading="lazy"></figure>
-          <figcaption>Turbot · Beurre Blanc</figcaption>
+          <figure><img src="images/fish-cream-sauce.jpg" alt="White fish with creamy beurre blanc sauce"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/crab-carpaccio.jpg" alt="King crab carpaccio" loading="lazy"></figure>
-          <figcaption>King Crab Carpaccio</figcaption>
+          <figure><img src="images/crab-carpaccio.jpg" alt="King crab carpaccio"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/oyster-caviar-tart.jpg" alt="Oyster tart with caviar" loading="lazy"></figure>
-          <figcaption>Oyster Tart · Caviar</figcaption>
+          <figure><img src="images/oyster-caviar-tart.jpg" alt="Oyster tart with caviar"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/canape-tray.jpg" alt="Prawn tartlet with flowers" loading="lazy"></figure>
-          <figcaption>Prawn Tartlet</figcaption>
+          <figure><img src="images/canape-tray.jpg" alt="Prawn tartlet with flowers"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/canape-plate.jpg" alt="Caviar tart close-up on scalloped plate" loading="lazy"></figure>
-          <figcaption>Caviar Tart</figcaption>
+          <figure><img src="images/canape-plate.jpg" alt="Caviar tart close-up on scalloped plate"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/dessert-tart-plating.jpg" alt="Individual chocolate tart" loading="lazy"></figure>
-          <figcaption>Chocolate Tart</figcaption>
+          <figure><img src="images/dessert-tart-plating.jpg" alt="Individual chocolate tart"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/wagyu-caviar-truffle-nigiri.jpg" alt="Wagyu nigiri with caviar and truffle" loading="lazy"></figure>
-          <figcaption>Wagyu Nigiri · Caviar · Truffle</figcaption>
+          <figure><img src="images/wagyu-caviar-truffle-nigiri.jpg" alt="Wagyu nigiri with caviar and truffle"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/scallop-caviar-mango.jpg" alt="Scallop with caviar and mango" loading="lazy"></figure>
-          <figcaption>Scallop · Caviar · Mango</figcaption>
+          <figure><img src="images/scallop-caviar-mango.jpg" alt="Scallop with caviar and mango"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/foie-gras-truffle.jpg" alt="Foie gras with shaved truffle" loading="lazy"></figure>
-          <figcaption>Foie Gras · Shaved Truffle</figcaption>
+          <figure><img src="images/foie-gras-truffle.jpg" alt="Foie gras with shaved truffle"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/salmon-caviar-herb-sauce.jpg" alt="Salmon with caviar and herb sauce" loading="lazy"></figure>
-          <figcaption>Salmon · Clam · Caviar</figcaption>
+          <figure><img src="images/salmon-caviar-herb-sauce.jpg" alt="Salmon with caviar and herb sauce"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/pork-belly-truffle-chanterelle.jpg" alt="Pork belly with truffle and chanterelles" loading="lazy"></figure>
-          <figcaption>Pork Belly · Chanterelle · Truffle</figcaption>
+          <figure><img src="images/pork-belly-truffle-chanterelle.jpg" alt="Pork belly with truffle and chanterelles"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/ceviche-seabass-flowers.jpg" alt="Sea bass ceviche with edible flowers" loading="lazy"></figure>
-          <figcaption>Sea Bass Ceviche</figcaption>
+          <figure><img src="images/ceviche-seabass-flowers.jpg" alt="Sea bass ceviche with edible flowers"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/burrata-prosciutto-peas.jpg" alt="Burrata with prosciutto and peas" loading="lazy"></figure>
-          <figcaption>Burrata · Prosciutto · Peas</figcaption>
+          <figure><img src="images/burrata-prosciutto-peas.jpg" alt="Burrata with prosciutto and peas"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/chocolate-dessert-caramel.jpg" alt="Chocolate dessert with salted caramel" loading="lazy"></figure>
-          <figcaption>Chocolate · Salted Caramel</figcaption>
+          <figure><img src="images/chocolate-dessert-caramel.jpg" alt="Chocolate dessert with salted caramel"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/jamon-iberico-caviar-canape.jpg" alt="Jamón ibérico canapés with caviar" loading="lazy"></figure>
-          <figcaption>Jamón Ibérico · Caviar</figcaption>
+          <figure><img src="images/jamon-iberico-caviar-canape.jpg" alt="Jamón ibérico canapés with caviar"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/dish-edible-flowers.jpg" alt="Dish styled with edible flowers" loading="lazy"></figure>
-          <figcaption>Garden Flowers · Citrus Cream</figcaption>
+          <figure><img src="images/dish-edible-flowers.jpg" alt="Dish styled with edible flowers"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/burrata-tomato-plates.jpg" alt="Burrata with heirloom tomatoes" loading="lazy"></figure>
-          <figcaption>Burrata · Heirloom Tomato</figcaption>
+          <figure><img src="images/burrata-tomato-plates.jpg" alt="Burrata with heirloom tomatoes"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/canape-variety-tray.jpg" alt="Selection of savoury canapés with caviar and crab" loading="lazy"></figure>
-          <figcaption>Crab &amp; Beef Tartare</figcaption>
+          <figure><img src="images/canape-variety-tray.jpg" alt="Selection of savoury canapés with caviar and crab"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/fish-carpaccio-caviar-mango.jpg" alt="Fish carpaccio with caviar and mango" loading="lazy"></figure>
-          <figcaption>Fish Carpaccio · Mango</figcaption>
+          <figure><img src="images/fish-carpaccio-caviar-mango.jpg" alt="Fish carpaccio with caviar and mango"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/onion-grape-borage.jpg" alt="Charred onion with grape and borage flowers" loading="lazy"></figure>
-          <figcaption>Charred Onion · Grape</figcaption>
+          <figure><img src="images/onion-grape-borage.jpg" alt="Charred onion with grape and borage flowers"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/tartlet-caviar-grain-display.jpg" alt="Caviar and onion jam tartlet" loading="lazy"></figure>
-          <figcaption>Caviar Tartlet</figcaption>
+          <figure><img src="images/tartlet-caviar-grain-display.jpg" alt="Caviar and onion jam tartlet"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/wagyu-caviar-canape-tray.jpg" alt="Wagyu beef canapés with caviar" loading="lazy"></figure>
-          <figcaption>Wagyu · Caviar Canapé</figcaption>
+          <figure><img src="images/wagyu-caviar-canape-tray.jpg" alt="Wagyu beef canapés with caviar"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/dessert-plating-service.jpg" alt="Raspberry and rose dome dessert" loading="lazy"></figure>
-          <figcaption>Raspberry &amp; Rose Dome</figcaption>
+          <figure><img src="images/dessert-plating-service.jpg" alt="Raspberry and rose dome dessert"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/dessert-pavlova.jpg" alt="Strawberry and meringue pavlova" loading="lazy"></figure>
-          <figcaption>Strawberry Pavlova</figcaption>
+          <figure><img src="images/dessert-pavlova.jpg" alt="Strawberry and meringue pavlova"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/dessert-peach-flowers.jpg" alt="Peach dessert with edible flowers" loading="lazy"></figure>
-          <figcaption>Peach · Yoghurt Sorbet</figcaption>
+          <figure><img src="images/dessert-peach-flowers.jpg" alt="Peach dessert with edible flowers"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/langoustine-caviar-dish.jpg" alt="Langoustine tails with caviar" loading="lazy"></figure>
-          <figcaption>Langoustine · Caviar</figcaption>
+          <figure><img src="images/langoustine-caviar-dish.jpg" alt="Langoustine tails with caviar"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/fish-cream-sauce.jpg" alt="White fish with creamy beurre blanc sauce" loading="lazy"></figure>
-          <figcaption>Turbot · Beurre Blanc</figcaption>
+          <figure><img src="images/fish-cream-sauce.jpg" alt="White fish with creamy beurre blanc sauce"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/crab-carpaccio.jpg" alt="King crab carpaccio" loading="lazy"></figure>
-          <figcaption>King Crab Carpaccio</figcaption>
+          <figure><img src="images/crab-carpaccio.jpg" alt="King crab carpaccio"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/oyster-caviar-tart.jpg" alt="Oyster tart with caviar" loading="lazy"></figure>
-          <figcaption>Oyster Tart · Caviar</figcaption>
+          <figure><img src="images/oyster-caviar-tart.jpg" alt="Oyster tart with caviar"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/canape-tray.jpg" alt="Prawn tartlet with flowers" loading="lazy"></figure>
-          <figcaption>Prawn Tartlet</figcaption>
+          <figure><img src="images/canape-tray.jpg" alt="Prawn tartlet with flowers"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/canape-plate.jpg" alt="Caviar tart close-up on scalloped plate" loading="lazy"></figure>
-          <figcaption>Caviar Tart</figcaption>
+          <figure><img src="images/canape-plate.jpg" alt="Caviar tart close-up on scalloped plate"></figure>
         </div>
         <div class="card tilt-card">
-          <figure><img src="images/dessert-tart-plating.jpg" alt="Individual chocolate tart" loading="lazy"></figure>
-          <figcaption>Chocolate Tart</figcaption>
+          <figure><img src="images/dessert-tart-plating.jpg" alt="Individual chocolate tart"></figure>
         </div>
     </div>
   </div>
@@ -503,7 +451,7 @@
     <div class="footer-top">
       <div class="footer-col footer-brand">
         <div class="logo"><img src="favicon.svg" alt="" class="brand-mark" loading="lazy" decoding="async"><span class="logo-text">ALEJANDRO NICOLAU</span></div>
-        <p>Alejandro Nicolau leads a dedicated team of chefs, bakers and service staff. Fine dining and artisan bread for yachts, residences and international events.</p>
+        <p>Alejandro Nicolau leads a dedicated team of chefs, bakers and service staff, delivering fine dining and artisan bread for private residences and international events.</p>
       </div>
       <div class="footer-col">
         <h5>Navigation</h5>
@@ -511,7 +459,6 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="menu.html">Menus</a></li>
       <li><a href="spanish-heritage.html">Spanish Heritage</a></li>
-      <li><a href="bakery.html">Bakery</a></li>
           <li><a href="events.html">Events</a></li>
           <li><a href="reviews.html">Reviews</a></li>
         </ul>

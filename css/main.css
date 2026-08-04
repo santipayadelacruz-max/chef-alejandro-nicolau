@@ -311,6 +311,19 @@ p{margin:0;}
   width:100%; height:100%;
   object-fit:cover;
 }
+
+/* ---------- Duotone reveal: black & white on load, colour on scroll ---------- */
+.duotone-photo{
+  filter:grayscale(100%) contrast(1.04);
+  transition:filter 1.5s cubic-bezier(.4,0,.2,1);
+  will-change:filter;
+}
+.duotone-photo.is-color{
+  filter:grayscale(0%) contrast(1);
+}
+@media (prefers-reduced-motion: reduce){
+  .duotone-photo{ filter:none; transition:none; }
+}
 .hero-media::after{
   content:"";
   position:absolute; inset:0;
@@ -642,6 +655,13 @@ section{padding:120px 0;}
 .menu-item .tag{
   display:inline-block; margin-top:10px;
   font-size:.66rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-600);
+}
+.menu-item figure.no-photo{
+  display:flex; align-items:center; justify-content:center;
+  background:var(--stone-200);
+}
+.menu-item figure.no-photo img{
+  width:34px; height:34px; object-fit:contain; opacity:.45;
 }
 .menu-note{
   margin-top:80px;
@@ -1106,8 +1126,10 @@ body.custom-cursor input, body.custom-cursor textarea, body.custom-cursor select
   gap:22px;
   width:max-content;
   animation:dish-marquee-scroll 55s linear infinite;
+  animation-play-state:paused;
 }
-.dish-marquee-wrap:hover .dish-marquee{animation-play-state:paused;}
+.dish-marquee.is-ready{animation-play-state:running;}
+.dish-marquee-wrap:hover .dish-marquee.is-ready{animation-play-state:paused;}
 .dish-marquee .card{width:min(300px,72vw); flex:0 0 auto;}
 .dish-marquee .card figure{margin:0; overflow:hidden; aspect-ratio:3/4;}
 .dish-marquee .card img{width:100%; height:100%; object-fit:cover; transition:transform .7s var(--ease);}

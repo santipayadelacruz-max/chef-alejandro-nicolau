@@ -26,6 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+SC:wght@500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/main.css">
+<link rel="preload" as="image" href="images/bulgari-table-setup.jpg" fetchpriority="high">
 <noscript><style>.reveal,.reveal-wipe,.reveal-scale{opacity:1 !important;transform:none !important;clip-path:none !important;}.page-curtain{display:none !important;}</style></noscript>
 </head>
 <body>
@@ -46,7 +47,6 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="menu.html">Menus</a></li>
       <li><a href="spanish-heritage.html">Spanish Heritage</a></li>
-      <li><a href="bakery.html">Bakery</a></li>
       <li><a href="events.html">Events</a></li>
       <li><a href="reviews.html" class="active">Reviews</a></li>
       <li><a href="contact.html">Contact</a></li>
@@ -68,18 +68,18 @@
 <div class="texture-panel marquee-wrap">
   <span class="press-label">As Featured In</span>
   <div class="marquee">
-    <img src="images/press/evening-standard.png" alt="Evening Standard" loading="lazy">
-    <img src="images/press/the-independent.png" alt="The Independent" loading="lazy">
-    <img src="images/press/bbc.png" alt="BBC" loading="lazy">
-    <img src="images/press/the-grocer.png" alt="The Grocer" loading="lazy">
-    <img src="images/press/the-times.png" alt="The Times" loading="lazy">
-    <img src="images/press/the-guardian.png" alt="The Guardian" loading="lazy">
-    <img src="images/press/evening-standard.png" alt="Evening Standard" loading="lazy">
-    <img src="images/press/the-independent.png" alt="The Independent" loading="lazy">
-    <img src="images/press/bbc.png" alt="BBC" loading="lazy">
-    <img src="images/press/the-grocer.png" alt="The Grocer" loading="lazy">
-    <img src="images/press/the-times.png" alt="The Times" loading="lazy">
-    <img src="images/press/the-guardian.png" alt="The Guardian" loading="lazy">
+    <img src="images/press/evening-standard.png" alt="Evening Standard">
+    <img src="images/press/the-independent.png" alt="The Independent">
+    <img src="images/press/bbc.png" alt="BBC">
+    <img src="images/press/the-grocer.png" alt="The Grocer">
+    <img src="images/press/the-times.png" alt="The Times">
+    <img src="images/press/the-guardian.png" alt="The Guardian">
+    <img src="images/press/evening-standard.png" alt="Evening Standard">
+    <img src="images/press/the-independent.png" alt="The Independent">
+    <img src="images/press/bbc.png" alt="BBC">
+    <img src="images/press/the-grocer.png" alt="The Grocer">
+    <img src="images/press/the-times.png" alt="The Times">
+    <img src="images/press/the-guardian.png" alt="The Guardian">
   </div>
 </div>
 
@@ -87,26 +87,32 @@
 <section class="bg-stone">
   <div class="container">
     <span class="eyebrow center reveal" style="display:flex;justify-content:center;">In their own words</span>
-    <div class="testi-carousel reveal" data-testi style="margin-top:40px;">
+    <p class="reveal" style="text-align:center; margin-top:10px; color:var(--ink-500); font-size:.82rem;">Verified reviews via Yhangry</p>
+    <div class="testi-carousel reveal" data-testi style="margin-top:24px;">
       <div class="testi-slide is-active">
         <div class="testi-stars">★★★★★</div>
-        <p class="testi-quote">"Two years as our family's exclusive chef in London. Every day he offered something new without ever losing consistency. An entirely discreet professional."</p>
-        <p class="testi-name">Private UHNW family · London</p>
+        <p class="testi-quote">"Alejandro catered for our intimate wedding, we consider ourselves 'foodies' and the food was a really important part of it and Alejandro absolutely delivered, from the canapés to dessert everything was amazing and I could not have asked for a better service or meal experience. Every single person emphasised how incredible the food was."</p>
+        <p class="testi-name">Sophie · Wedding, 12 guests</p>
       </div>
       <div class="testi-slide">
         <div class="testi-stars">★★★★★</div>
-        <p class="testi-quote">"We spent two weeks cruising St Tropez with Alejandro on board. The cooking never dropped a level, even on rough sea days. We'll be booking him again."</p>
-        <p class="testi-name">Yacht owner, 40m · St Tropez</p>
+        <p class="testi-quote">"I can honestly say that this was the best BBQ ever hosted in our house. Alejandro and his team delivered beautifully cooked food and impeccable service. I had people coming over to me all afternoon and early night to say that they felt well looked after but also that the food was incredible!"</p>
+        <p class="testi-name">Marcela · BBQ, 30 guests</p>
       </div>
       <div class="testi-slide">
         <div class="testi-stars">★★★★★</div>
-        <p class="testi-quote">"He managed our kosher-style menus with a respect and knowledge of tradition that exceeded every expectation. Recommended without hesitation."</p>
-        <p class="testi-name">Private family · Central London</p>
+        <p class="testi-quote">"Chef Alejandro and the bartender, Mihai, superseded our expectations. The canapés we ordered were incredible from the presentation to the taste. He served them himself on trays and explained each one to our guests, which made it more personal. Our event was truly elevated by their catering services."</p>
+        <p class="testi-name">Agnes · Private event, 32 guests</p>
       </div>
       <div class="testi-slide">
         <div class="testi-stars">★★★★★</div>
-        <p class="testi-quote">"We booked Alejandro for our top clients' table. The setup, the pace of service and every dish lived up to the brand."</p>
-        <p class="testi-name">Private event · Bulgari</p>
+        <p class="testi-quote">"I had never used a private chef for an event before, but our experience with Chef Alejandro was brilliant. He arrived at the agreed time with everything he needed. The food was spectacular and gained a lot of wonderful comments from the guests."</p>
+        <p class="testi-name">Kirby · Private dinner, 21 guests</p>
+      </div>
+      <div class="testi-slide">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"The whole experience was faultless! From curating the menu with Alejandro to Álvaro coming and cooking a fantastic meal. The food was outstanding and great quality, and he left the house so tidy. Highly recommend!"</p>
+        <p class="testi-name">Jessica · Private dinner, 17 guests</p>
       </div>
     </div>
     <div class="testi-dots" data-testi-dots></div>
@@ -119,41 +125,56 @@
     <div class="section-head reveal">
       <div>
         <span class="eyebrow">Reviews</span>
-        <h2 class="h-lg" style="margin-top:18px;">Clients who return</h2>
+        <h2 class="h-lg" style="margin-top:18px;">Clients Who Return</h2>
       </div>
-      <p class="lede">Over 80% of Alejandro's bookings come from repeat clients or direct referrals.</p>
+      <p class="lede">A selection of verified reviews from real bookings, birthdays, weddings, hen dos and family dinners.</p>
     </div>
 
     <div class="review-grid reveal">
       <div class="review-card tilt-card">
         <div class="testi-stars">★★★★★</div>
-        <p>"Sole chef for our family for over a year. Punctual, meticulous, and with a level of creativity our guests always comment on."</p>
-        <p class="testi-name">Private client, Central London</p>
+        <p>"Alejandro was professional, the food was incredible, overall it made for an amazing evening! We tried some of the most amazing delicacies executed with such care, the mantao bread (to name one of many) was phenomenal."</p>
+        <p class="testi-name">Emmie · 7 guests</p>
       </div>
       <div class="review-card tilt-card">
         <div class="testi-stars">★★★★★</div>
-        <p>"He organised a gala dinner for 40 guests with the logistics of a Michelin-starred restaurant. Flawless from start to finish."</p>
-        <p class="testi-name">Corporate event, London</p>
+        <p>"Perfect from start to finish. Alejandro provided an amazing menu initially and took my suggestions and requests onboard. He was engaging, supremely competent and made loads of excellent dishes. Everyone loved it."</p>
+        <p class="testi-name">Daniel · 5 guests</p>
       </div>
       <div class="review-card tilt-card">
         <div class="testi-stars">★★★★★</div>
-        <p>"He joined us for a two-week voyage. He adapted to the day's catch and our tastes without ever losing the elegance of the plate."</p>
-        <p class="testi-name">Yacht owner, Mediterranean</p>
+        <p>"10/10! Food was amazing, top restaurant standard. Alejandro was very organised and helped our event run smoothly. Would certainly book him again."</p>
+        <p class="testi-name">Lucy · 23 guests</p>
       </div>
       <div class="review-card tilt-card">
         <div class="testi-stars">★★★★★</div>
-        <p>"His vegetarian tasting menu was a constant surprise. Every course used a different technique and beautifully careful presentation."</p>
-        <p class="testi-name">Private dinner, London</p>
+        <p>"Excellent service from start to finish. We did nothing but sit at a beautifully laid table, eat delicious food and wave them goodbye after everything had been cleaned and cleared. They made our evening super special."</p>
+        <p class="testi-name">Niki · 8 guests</p>
       </div>
       <div class="review-card tilt-card">
         <div class="testi-stars">★★★★★</div>
-        <p>"Total discretion with our high-profile guests. We never felt we had outside staff at home. He became part of the team."</p>
-        <p class="testi-name">UHNW family, London</p>
+        <p>"Alejandro was fantastic and provided delicious, high quality and beautifully presented food to make my sister's bachelorette incredibly special! A direct quote: 'Chef Alejandro was a slay'. Would definitely book him again!"</p>
+        <p class="testi-name">Becky · 16 guests</p>
       </div>
       <div class="review-card tilt-card">
         <div class="testi-stars">★★★★★</div>
-        <p>"From the first enquiry to the last petit four, everything was coordinated down to the smallest detail. We've already booked him for next year."</p>
-        <p class="testi-name">Returning client, London</p>
+        <p>"The most delicious Spanish food. Alejandro is an incredible chef, and made the hen do so special. I would recommend Alejandro to anyone, he is a superstar!"</p>
+        <p class="testi-name">Francesca · 13 guests</p>
+      </div>
+      <div class="review-card tilt-card">
+        <div class="testi-stars">★★★★★</div>
+        <p>"Alejandro was great with planning ahead of the event, arrived on time, made the most delicious food, and was very clean and tidy. His menus are also amazing, and as good as they sound."</p>
+        <p class="testi-name">Bea · 14 guests</p>
+      </div>
+      <div class="review-card tilt-card">
+        <div class="testi-stars">★★★★★</div>
+        <p>"We booked Chef Alejandro for my mother's 65th birthday dinner. He helped us create a vegetarian Asian fusion menu, and every dish was delicious with very generous portions. My mum was absolutely delighted."</p>
+        <p class="testi-name">Georgina · 6 guests</p>
+      </div>
+      <div class="review-card tilt-card">
+        <div class="testi-stars">★★★★★</div>
+        <p>"I booked Alejandro for my 40th birthday and it was perfect. I had gluten free and vegetarian guests which he catered to, with two beautifully cooked options per course. I'd also add his canapés for an extra special touch!"</p>
+        <p class="testi-name">Kat · 5 guests</p>
       </div>
     </div>
   </div>
@@ -205,7 +226,7 @@
     <div class="footer-top">
       <div class="footer-col footer-brand">
         <div class="logo"><img src="favicon.svg" alt="" class="brand-mark" loading="lazy" decoding="async"><span class="logo-text">ALEJANDRO NICOLAU</span></div>
-        <p>Alejandro Nicolau leads a dedicated team of chefs, bakers and service staff. Fine dining and artisan bread for yachts, residences and international events.</p>
+        <p>Alejandro Nicolau leads a dedicated team of chefs, bakers and service staff, delivering fine dining and artisan bread for private residences and international events.</p>
       </div>
       <div class="footer-col">
         <h5>Navigation</h5>
@@ -213,7 +234,6 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="menu.html">Menus</a></li>
       <li><a href="spanish-heritage.html">Spanish Heritage</a></li>
-      <li><a href="bakery.html">Bakery</a></li>
           <li><a href="events.html">Events</a></li>
           <li><a href="reviews.html">Reviews</a></li>
         </ul>

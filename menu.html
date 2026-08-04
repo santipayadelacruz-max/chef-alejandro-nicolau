@@ -26,6 +26,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+SC:wght@500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/main.css">
+<link rel="preload" as="image" href="images/pork-belly-truffle-chanterelle.jpg" fetchpriority="high">
 <noscript><style>.reveal,.reveal-wipe,.reveal-scale{opacity:1 !important;transform:none !important;clip-path:none !important;}.page-curtain{display:none !important;}</style></noscript>
 </head>
 <body>
@@ -46,7 +47,6 @@
       <li><a href="index.html">Home</a></li>
       <li><a href="menu.html" class="active">Menus</a></li>
       <li><a href="spanish-heritage.html">Spanish Heritage</a></li>
-      <li><a href="bakery.html">Bakery</a></li>
       <li><a href="events.html">Events</a></li>
       <li><a href="reviews.html">Reviews</a></li>
       <li><a href="contact.html">Contact</a></li>
@@ -79,35 +79,51 @@
     <div class="menu-panel is-active" id="tab-canapes">
       <div class="menu-grid">
         <div class="menu-item">
-          <figure><img src="images/jamon-iberico-caviar-canape.jpg" alt="Jamón ibérico canapés with caviar" loading="lazy"></figure>
+          <figure><img src="images/menu/canape-crab-avocado.jpg" alt="Crab, Avocado and Corn Flower" loading="lazy" decoding="async"></figure>
           <div class="txt">
-            <h4>Jamón Ibérico &amp; Caviar</h4>
-            <p>Toasted brioche, hand-carved acorn-fed ham and Oscietra caviar.</p>
+            <h4>Crab, Avocado &amp; Corn Flower</h4>
+            <p>Sweet white crab and avocado in a crisp tartlet shell, finished with fresh corn flowers.</p>
             <span class="tag">Signature</span>
           </div>
         </div>
         <div class="menu-item">
-          <figure><img src="images/wagyu-caviar-canape-tray.jpg" alt="Wagyu beef canapés with caviar" loading="lazy"></figure>
+          <figure><img src="images/menu/canape-beetroot-tartar.jpg" alt="Beetroot Tartar, Pumpkin and Yogurt" loading="lazy" decoding="async"></figure>
           <div class="txt">
-            <h4>Wagyu Beef &amp; Caviar</h4>
-            <p>Cured wagyu, crème fraîche and caviar on a crisp base.</p>
-            <span class="tag">With Caviar</span>
+            <h4>Beetroot Tartar, Pumpkin &amp; Yogurt</h4>
+            <p>Marinated beetroot tartare, spiced pumpkin and whipped yogurt in a delicate tartlet.</p>
+            <span class="tag">Vegetarian</span>
           </div>
         </div>
         <div class="menu-item">
-          <figure><img src="images/tartlet-caviar-grain-display.jpg" alt="Caviar and onion jam tartlets" loading="lazy"></figure>
+          <figure><img src="images/menu/canape-tuna-tartar.jpg" alt="Tuna Tartar, Miso, Avocado and Truffle" loading="lazy" decoding="async"></figure>
           <div class="txt">
-            <h4>Caviar &amp; Onion Jam Tartlet</h4>
-            <p>Crisp filo shell, whipped mascarpone and slow-cooked onion jam.</p>
-            <span class="tag">Fine Dining</span>
+            <h4>Tuna Tartar, Miso, Avocado &amp; Truffle</h4>
+            <p>Yellowfin tuna tartare with miso, avocado and shaved black truffle.</p>
+            <span class="tag">With Truffle</span>
           </div>
         </div>
         <div class="menu-item">
-          <figure><img src="images/canape-variety-tray.jpg" alt="Selection of savoury canapés with caviar and crab" loading="lazy"></figure>
+          <figure><img src="images/menu/canape-spiced-cauliflower.jpg" alt="Spiced Cauliflower, Parsnip Emulsion and Mustard Seeds" loading="lazy" decoding="async"></figure>
           <div class="txt">
-            <h4>Crab &amp; Beef Tartare Selection</h4>
-            <p>Avocado crab tartlets and beef tartare on rye, finished with roe and caviar.</p>
-            <span class="tag">Fine Dining</span>
+            <h4>Spiced Cauliflower, Parsnip Emulsion &amp; Mustard Seeds</h4>
+            <p>Roasted spiced cauliflower, silky parsnip emulsion and toasted mustard seeds.</p>
+            <span class="tag">Vegetarian</span>
+          </div>
+        </div>
+        <div class="menu-item no-photo">
+          <figure class="no-photo" aria-hidden="true"><img src="favicon.svg" alt="" class="brand-mark" loading="lazy" decoding="async"></figure>
+          <div class="txt">
+            <h4>Wagyu</h4>
+            <p>Cured wagyu beef, canapé-style. Preparation changes with the season, ask Alejandro for the current version.</p>
+            <span class="tag">Signature</span>
+          </div>
+        </div>
+        <div class="menu-item no-photo">
+          <figure class="no-photo" aria-hidden="true"><img src="favicon.svg" alt="" class="brand-mark" loading="lazy" decoding="async"></figure>
+          <div class="txt">
+            <h4>Croquetas</h4>
+            <p>Classic Spanish croquetas, made in-house. Ask Alejandro for the current filling.</p>
+            <span class="tag">Spanish</span>
           </div>
         </div>
       </div>
@@ -116,36 +132,76 @@
     <!-- STARTERS -->
     <div class="menu-panel" id="tab-starters">
       <div class="menu-grid">
-        <div class="menu-item">
-          <figure><img src="images/ceviche-seabass-flowers.jpg" alt="Sea bass ceviche with edible flowers" loading="lazy"></figure>
+        <div class="menu-item no-photo">
+          <figure class="no-photo" aria-hidden="true"><img src="favicon.svg" alt="" class="brand-mark" loading="lazy" decoding="async"></figure>
           <div class="txt">
-            <h4>Sea Bass Ceviche</h4>
-            <p>Cucumber, nori and citrus leche de tigre, finished with edible flowers.</p>
+            <h4>Sea Bream Crudo, Coconut &amp; Lime Dressing, Coriander Oil &amp; Pickled Cucumber</h4>
+            <p>Thinly sliced sea bream cured with coconut and lime, finished with coriander oil and pickled cucumber.</p>
             <span class="tag">Signature</span>
           </div>
         </div>
         <div class="menu-item">
-          <figure><img src="images/burrata-prosciutto-peas.jpg" alt="Burrata with prosciutto and peas" loading="lazy"></figure>
+          <figure><img src="images/menu/starter-carabinero-carpaccio.jpg" alt="Carabinero Carpaccio, Sea Urchin, Scallop and Caviar" loading="lazy" decoding="async"></figure>
           <div class="txt">
-            <h4>Burrata, Prosciutto &amp; Peas</h4>
-            <p>Heirloom tomatoes, fresh English peas and 24-month prosciutto.</p>
-            <span class="tag">Mediterranean</span>
-          </div>
-        </div>
-        <div class="menu-item">
-          <figure><img src="images/fish-carpaccio-caviar-mango.jpg" alt="Fish carpaccio with caviar and mango" loading="lazy"></figure>
-          <div class="txt">
-            <h4>Fish Carpaccio, Caviar &amp; Mango</h4>
-            <p>Citrus-cured white fish, black caviar and mango-lime dressing.</p>
+            <h4>Carabinero Carpaccio, Sea Urchin, Scallop &amp; Caviar</h4>
+            <p>Red carabinero prawn carpaccio with sea urchin, scallop and caviar.</p>
             <span class="tag">With Caviar</span>
           </div>
         </div>
         <div class="menu-item">
-          <figure><img src="images/onion-grape-borage.jpg" alt="Charred onion with grape and borage flowers" loading="lazy"></figure>
+          <figure><img src="images/menu/starter-scottish-scallops.jpg" alt="Scottish Scallops, Fresh Peas, Morels and Cauliflower" loading="lazy" decoding="async"></figure>
           <div class="txt">
-            <h4>Charred Onion, Grape &amp; Borage</h4>
-            <p>Roasted baby onions, pickled grape, whipped goat's cheese and walnut.</p>
+            <h4>Scottish Scallops, Fresh Peas, Morels &amp; Cauliflower</h4>
+            <p>Seared Scottish scallops with fresh garden peas, wild morels and cauliflower purée.</p>
+            <span class="tag">Seasonal</span>
+          </div>
+        </div>
+        <div class="menu-item">
+          <figure><img src="images/menu/starter-lobster-cocktail.jpg" alt="Lobster Cocktail, Pickled Cucumber and Truffle" loading="lazy" decoding="async"></figure>
+          <div class="txt">
+            <h4>Lobster Cocktail, Pickled Cucumber &amp; Truffle</h4>
+            <p>Classic lobster cocktail reimagined with pickled cucumber and shaved truffle.</p>
+            <span class="tag">With Truffle</span>
+          </div>
+        </div>
+        <div class="menu-item">
+          <figure><img src="images/menu/starter-yellowtail-hamachi.jpg" alt="Yellow Tail Hamachi, Curry Marinade, Jalapeño and Green Apple Chutney and Chipolatas" loading="lazy" decoding="async"></figure>
+          <div class="txt">
+            <h4>Yellow Tail Hamachi, Curry Marinade, Jalapeño &amp; Green Apple Chutney and Chipolatas</h4>
+            <p>Hamachi cured in a curry marinade, with jalapeño and green apple chutney.</p>
+            <span class="tag">Asian</span>
+          </div>
+        </div>
+        <div class="menu-item">
+          <figure><img src="images/menu/starter-crab-lobster-ravioli.jpg" alt="Crab and Lobster Ravioli, Champagne and Parmesan Beurre Blanc and Basil Oil" loading="lazy" decoding="async"></figure>
+          <div class="txt">
+            <h4>Crab &amp; Lobster Ravioli, Champagne &amp; Parmesan Beurre Blanc and Basil Oil</h4>
+            <p>House-made crab and lobster ravioli in a champagne and parmesan beurre blanc.</p>
+            <span class="tag">Signature</span>
+          </div>
+        </div>
+        <div class="menu-item">
+          <figure><img src="images/menu/starter-crudo-langoustines.jpg" alt="Crudo Langoustines, Cauliflower Velouté, Brown Butter and Caviar" loading="lazy" decoding="async"></figure>
+          <div class="txt">
+            <h4>Crudo Langoustines, Cauliflower Velouté, Brown Butter &amp; Caviar</h4>
+            <p>Raw langoustines over cauliflower velouté, brown butter and caviar.</p>
+            <span class="tag">With Caviar</span>
+          </div>
+        </div>
+        <div class="menu-item">
+          <figure><img src="images/menu/starter-courgette-asparagus-salad.jpg" alt="Courgette and Asparagus Salad, Parmesan Foam and Cress Garden" loading="lazy" decoding="async"></figure>
+          <div class="txt">
+            <h4>Courgette &amp; Asparagus Salad, Parmesan Foam &amp; Cress Garden</h4>
+            <p>Shaved courgette and asparagus salad with parmesan foam and a garden of cress and edible flowers.</p>
             <span class="tag">Vegetarian</span>
+          </div>
+        </div>
+        <div class="menu-item">
+          <figure><img src="images/menu/starter-chestnut-iberico-salad.jpg" alt="Chestnut, Ibérico Ham, Figs and Jerusalem Artichoke Salad with Raspberry Dressing" loading="lazy" decoding="async"></figure>
+          <div class="txt">
+            <h4>Chestnut, Ibérico Ham, Figs &amp; Jerusalem Artichoke Salad with Raspberry Dressing</h4>
+            <p>Roasted chestnut and Jerusalem artichoke salad with Ibérico ham, figs and a raspberry dressing.</p>
+            <span class="tag">Spanish</span>
           </div>
         </div>
       </div>
@@ -155,35 +211,35 @@
     <div class="menu-panel" id="tab-mains">
       <div class="menu-grid">
         <div class="menu-item">
-          <figure><img src="images/fish-cream-sauce.jpg" alt="White fish with creamy sauce" loading="lazy"></figure>
+          <figure><img src="images/menu/main-corn-fed-chicken.jpg" alt="Corn Fed Chicken Breast, Truffle, Parsnip Purée and Wild Rice Granola" loading="lazy" decoding="async"></figure>
           <div class="txt">
-            <h4>Turbot &amp; Beurre Blanc</h4>
-            <p>Baby potatoes, caviar and fresh garden herbs over a creamy butter sauce.</p>
+            <h4>Corn Fed Chicken Breast, Truffle, Parsnip Purée &amp; Wild Rice Granola</h4>
+            <p>Corn-fed chicken breast finished with truffle, parsnip purée and a wild rice granola.</p>
             <span class="tag">Signature</span>
           </div>
         </div>
         <div class="menu-item">
-          <figure><img src="images/salmon-caviar-herb-sauce.jpg" alt="Salmon with caviar and herb sauce" loading="lazy"></figure>
+          <figure><img src="images/menu/main-confit-salmon.jpg" alt="Confit Salmon, Cucumber Gazpacho and Tarragon Oil" loading="lazy" decoding="async"></figure>
           <div class="txt">
-            <h4>Salmon, Clam &amp; Caviar</h4>
-            <p>Herb green sauce, pickled beetroot crumb and steamed clams.</p>
-            <span class="tag">With Caviar</span>
+            <h4>Confit Salmon, Cucumber Gazpacho &amp; Tarragon Oil</h4>
+            <p>Slow confit salmon over a chilled cucumber gazpacho, finished with tarragon oil.</p>
+            <span class="tag">Fine Dining</span>
           </div>
         </div>
         <div class="menu-item">
-          <figure><img src="images/foie-gras-truffle.jpg" alt="Foie gras with shaved truffle" loading="lazy"></figure>
+          <figure><img src="images/menu/main-ox-cheek.jpg" alt="Ox Cheek, Cauliflower Purée, Girolles and Beef Jus" loading="lazy" decoding="async"></figure>
           <div class="txt">
-            <h4>Foie Gras &amp; Shaved Truffle</h4>
-            <p>Pan-seared foie gras, toasted seeds and apple purée, finished tableside with truffle.</p>
+            <h4>Ox Cheek, Cauliflower Purée, Girolles &amp; Beef Jus</h4>
+            <p>Slow-braised ox cheek with cauliflower purée, wild girolles and a rich beef jus.</p>
             <span class="tag">Signature</span>
           </div>
         </div>
         <div class="menu-item">
-          <figure><img src="images/pork-belly-truffle-chanterelle.jpg" alt="Pork belly with truffle and chanterelles" loading="lazy"></figure>
+          <figure><img src="images/menu/main-roasted-turbot.jpg" alt="Roasted Turbot, Jersey Potatoes, Herbed Hollandaise and Basil Oil" loading="lazy" decoding="async"></figure>
           <div class="txt">
-            <h4>Pork Belly, Chanterelle &amp; Truffle</h4>
-            <p>Slow-braised pork belly, wild chanterelles, roasted shallot and black truffle crumb.</p>
-            <span class="tag">Mediterranean</span>
+            <h4>Roasted Turbot, Jersey Potatoes, Herbed Hollandaise &amp; Basil Oil</h4>
+            <p>Roasted turbot with Jersey potatoes, herbed hollandaise and basil oil.</p>
+            <span class="tag">Fine Dining</span>
           </div>
         </div>
       </div>
@@ -193,42 +249,34 @@
     <div class="menu-panel" id="tab-desserts">
       <div class="menu-grid">
         <div class="menu-item">
-          <figure><img src="images/dessert-tart-plating.jpg" alt="Individual chocolate tart" loading="lazy" decoding="async"></figure>
+          <figure><img src="images/menu/dessert-chocolate-tartlet.jpg" alt="Chocolate Tartlet, Brownie Crumble and Cinnamon Ice Cream" loading="lazy" decoding="async"></figure>
           <div class="txt">
-            <h4>70% Chocolate Tart</h4>
-            <p>Rich ganache, crisp cocoa base and hazelnut butter.</p>
+            <h4>Chocolate Tartlet, Brownie Crumble &amp; Cinnamon Ice Cream</h4>
+            <p>Rich chocolate tartlet with brownie crumble and house-made cinnamon ice cream.</p>
             <span class="tag">Signature</span>
           </div>
         </div>
         <div class="menu-item">
-          <figure><img src="images/chef-kitchen-dessert.jpg" alt="Chef preparing plated desserts" loading="lazy" decoding="async"></figure>
+          <figure><img src="images/menu/dessert-strawberry-pavlova.jpg" alt="Strawberry Pavlova, Mint Sorbet and Strawberry Nectar" loading="lazy" decoding="async"></figure>
           <div class="txt">
-            <h4>Mango &amp; Passionfruit Mousse</h4>
-            <p>Light aerated texture, tropical fruit gel and toasted coconut crumb.</p>
-            <span class="tag">Tropical</span>
-          </div>
-        </div>
-        <div class="menu-item">
-          <figure><img src="images/chocolate-dessert-caramel.jpg" alt="Chocolate dessert with salted caramel" loading="lazy"></figure>
-          <div class="txt">
-            <h4>Warm Chocolate &amp; Salted Caramel</h4>
-            <p>Molten chocolate sponge, vanilla ice cream and salted caramel drizzle.</p>
-            <span class="tag">Signature</span>
-          </div>
-        </div>
-        <div class="menu-item">
-          <figure><img src="images/dessert-plating-service.jpg" alt="Raspberry and rose dome dessert" loading="lazy"></figure>
-          <div class="txt">
-            <h4>Raspberry &amp; Rose Dome</h4>
-            <p>Velvet raspberry mousse, rose gel and almond praline crumb.</p>
+            <h4>Strawberry Pavlova, Mint Sorbet &amp; Strawberry Nectar</h4>
+            <p>Crisp meringue pavlova with fresh strawberries, mint sorbet and strawberry nectar.</p>
             <span class="tag">Seasonal</span>
           </div>
         </div>
         <div class="menu-item">
-          <figure><img src="images/canape-plate.jpg" alt="Peach dessert with flowers" loading="lazy"></figure>
+          <figure><img src="images/menu/dessert-chocolate-cremeux.jpg" alt="Chocolate Crémeux, Warm Chocolate Pudding, Caramel, Cookie Crumble and Madagascar Vanilla Ice Cream" loading="lazy" decoding="async"></figure>
           <div class="txt">
-            <h4>Peach &amp; Yoghurt Sorbet</h4>
-            <p>Edible flowers, red fruit coulis and citrus powder.</p>
+            <h4>Chocolate Crémeux, Warm Chocolate Pudding, Caramel, Cookie Crumble &amp; Madagascar Vanilla Ice Cream</h4>
+            <p>Layers of chocolate crémeux and warm pudding with caramel, cookie crumble and Madagascar vanilla ice cream.</p>
+            <span class="tag">Signature</span>
+          </div>
+        </div>
+        <div class="menu-item">
+          <figure><img src="images/menu/dessert-peach-lavender.jpg" alt="Peach, Lavender and Meringue" loading="lazy" decoding="async"></figure>
+          <div class="txt">
+            <h4>Peach, Lavender &amp; Meringue</h4>
+            <p>Poached peach with lavender, meringue and a light yoghurt cream.</p>
             <span class="tag">Light</span>
           </div>
         </div>
@@ -239,35 +287,27 @@
     <div class="menu-panel" id="tab-petitfours">
       <div class="menu-grid">
         <div class="menu-item">
-          <figure><img src="images/dessert-tart-plating.jpg" alt="Selection of petit fours" loading="lazy" decoding="async"></figure>
+          <figure><img src="images/menu/petitfour-tray-coconut-mango.jpg" alt="Petit Four Tray - Coconut and Mango Tart, Raspberry and Tarragon" loading="lazy" decoding="async"></figure>
           <div class="txt">
-            <h4>Macaron Selection</h4>
-            <p>Rotating seasonal flavours, made in-house.</p>
+            <h4>Petit Four Tray &mdash; Coconut &amp; Mango Tart, Raspberry &amp; Tarragon</h4>
+            <p>A tray of bite-sized tartlets: coconut and mango, and raspberry and tarragon.</p>
+            <span class="tag">Tropical</span>
+          </div>
+        </div>
+        <div class="menu-item">
+          <figure><img src="images/menu/petitfour-selection-macaron.jpg" alt="Petit Four Selection - Cinnamon Macaron, Tarte Tropézienne, Triple Chocolate Bonbon" loading="lazy" decoding="async"></figure>
+          <div class="txt">
+            <h4>Petit Four Selection &mdash; Cinnamon Macaron, Tarte Tropézienne, Triple Chocolate Bonbon</h4>
+            <p>Cinnamon macarons, miniature tarte tropézienne and triple chocolate bonbons.</p>
             <span class="tag">Coffee</span>
           </div>
         </div>
         <div class="menu-item">
-          <figure><img src="images/chef-kitchen-dessert.jpg" alt="Raspberry tartlets" loading="lazy" decoding="async"></figure>
+          <figure><img src="images/menu/petitfour-pannacotta-macaron.jpg" alt="Panna Cotta and Raspberry Macaron" loading="lazy" decoding="async"></figure>
           <div class="txt">
-            <h4>Raspberry Tartlets</h4>
-            <p>Vanilla pastry cream and fresh raspberries.</p>
+            <h4>Panna Cotta &amp; Raspberry Macaron</h4>
+            <p>Silky panna cotta paired with raspberry macarons.</p>
             <span class="tag">Signature</span>
-          </div>
-        </div>
-        <div class="menu-item">
-          <figure><img src="images/canape-tray.jpg" alt="Floral tartlets" loading="lazy" decoding="async"></figure>
-          <div class="txt">
-            <h4>Beetroot &amp; Flower Tartlets</h4>
-            <p>Light sponge decorated with edible flowers.</p>
-            <span class="tag">Floral Presentation</span>
-          </div>
-        </div>
-        <div class="menu-item">
-          <figure><img src="images/chocolate-dessert-caramel.jpg" alt="Chocolate and salted caramel truffles" loading="lazy"></figure>
-          <div class="txt">
-            <h4>Chocolate &amp; Salted Caramel Truffles</h4>
-            <p>Dark chocolate ganache with salted toffee.</p>
-            <span class="tag">Coffee</span>
           </div>
         </div>
       </div>
@@ -286,7 +326,7 @@
     <div class="footer-top">
       <div class="footer-col footer-brand">
         <div class="logo"><img src="favicon.svg" alt="" class="brand-mark" loading="lazy" decoding="async"><span class="logo-text">ALEJANDRO NICOLAU</span></div>
-        <p>Alejandro Nicolau leads a dedicated team of chefs, bakers and service staff. Fine dining and artisan bread for yachts, residences and international events.</p>
+        <p>Alejandro Nicolau leads a dedicated team of chefs, bakers and service staff, delivering fine dining and artisan bread for private residences and international events.</p>
       </div>
       <div class="footer-col">
         <h5>Navigation</h5>
@@ -294,7 +334,6 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="menu.html">Menus</a></li>
       <li><a href="spanish-heritage.html">Spanish Heritage</a></li>
-      <li><a href="bakery.html">Bakery</a></li>
           <li><a href="events.html">Events</a></li>
           <li><a href="reviews.html">Reviews</a></li>
         </ul>

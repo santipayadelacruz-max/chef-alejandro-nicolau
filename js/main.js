@@ -208,6 +208,42 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* ---------- Duotone photos: black & white on load, colour on scroll ---------- */
+  const heroDuotone = document.querySelector('.is-hero-duotone');
+  if (heroDuotone) {
+    if (reduceMotion) {
+      heroDuotone.classList.add('is-color');
+    } else {
+      let heroColored = false;
+      const revealHeroColor = () => {
+        if (heroColored) return;
+        if (window.scrollY > 60) {
+          heroDuotone.classList.add('is-color');
+          heroColored = true;
+          window.removeEventListener('scroll', revealHeroColor);
+        }
+      };
+      window.addEventListener('scroll', revealHeroColor, { passive: true });
+      revealHeroColor();
+    }
+  }
+  const otherDuotones = document.querySelectorAll('.duotone-photo:not(.is-hero-duotone)');
+  if (otherDuotones.length) {
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      otherDuotones.forEach(el => el.classList.add('is-color'));
+    } else {
+      const duotoneIo = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-color');
+            duotoneIo.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3, rootMargin: '0px 0px -10% 0px' });
+      otherDuotones.forEach(el => duotoneIo.observe(el));
+    }
+  }
+
   /* ---------- Scroll reveal ---------- */
   const revealEls = document.querySelectorAll('.reveal, .reveal-wipe, .reveal-scale');
   if ('IntersectionObserver' in window) {
@@ -226,6 +262,21 @@ document.addEventListener('DOMContentLoaded', () => {
   // Safety net: never let content stay invisible if something prevents the
   // intersection observer from firing (e.g. unusual local-file setups).
   setTimeout(() => revealEls.forEach(el => el.classList.add('is-visible')), 4000);
+
+  /* ---------- Dish marquee: wait for images before animating ---------- */
+  const dishMarquee = document.querySelector('.dish-marquee');
+  if (dishMarquee) {
+    const imgs = [...dishMarquee.querySelectorAll('img')];
+    const whenLoaded = imgs.map(img => new Promise(resolve => {
+      if (img.complete) { resolve(); return; }
+      img.addEventListener('load', resolve, { once: true });
+      img.addEventListener('error', resolve, { once: true });
+    }));
+    const timeout = new Promise(resolve => setTimeout(resolve, 3500));
+    Promise.race([Promise.all(whenLoaded), timeout]).then(() => {
+      dishMarquee.classList.add('is-ready');
+    });
+  }
 
   /* ---------- Generic horizontal carousels ---------- */
   document.querySelectorAll('[data-carousel]').forEach(carousel => {
