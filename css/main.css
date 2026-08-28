@@ -139,6 +139,8 @@ p{margin:0;}
 .btn{
   display:inline-flex;
   align-items:center;
+  justify-content:center;
+  text-align:center;
   gap:12px;
   padding:16px 34px;
   border:1px solid var(--gold-500);
@@ -623,6 +625,129 @@ section{padding:120px 0;}
 .review-card .testi-name{margin-top:auto;}
 
 /* ============================================================
+   Sample menu accordion (Spanish Heritage)
+   ============================================================ */
+.accordion-list{
+  max-width:820px;
+  margin:56px auto 0;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+.accordion-item{
+  background:var(--stone-100);
+  border:1px solid var(--stone-200);
+  border-radius:14px;
+  overflow:hidden;
+  transition:border-color .3s var(--ease), box-shadow .3s var(--ease);
+}
+.accordion-item.is-open{
+  border-color:var(--gold-500);
+  box-shadow:0 18px 40px -24px rgba(27,24,17,.35);
+}
+.accordion-trigger{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding:26px 30px;
+  background:none;
+  border:none;
+  text-align:left;
+  font-family:inherit;
+}
+.accordion-trigger-text{display:flex; flex-direction:column; gap:6px;}
+.accordion-title{
+  font-family:var(--font-display);
+  font-size:1.4rem;
+  color:var(--ink-900);
+}
+.accordion-sub{
+  font-family:var(--font-body);
+  font-size:.86rem;
+  color:var(--ink-500);
+  font-style:italic;
+}
+.accordion-icon{
+  position:relative;
+  flex-shrink:0;
+  width:34px;height:34px;
+  border-radius:50%;
+  border:1px solid var(--gold-500);
+}
+.accordion-icon::before,
+.accordion-icon::after{
+  content:"";
+  position:absolute; top:50%; left:50%;
+  background:var(--gold-600);
+  transition:transform .4s var(--ease), opacity .4s var(--ease);
+}
+.accordion-icon::before{width:12px; height:1px; transform:translate(-50%,-50%);}
+.accordion-icon::after{width:1px; height:12px; transform:translate(-50%,-50%);}
+.accordion-item.is-open .accordion-icon::after{transform:translate(-50%,-50%) rotate(90deg); opacity:0;}
+.accordion-item.is-open .accordion-icon{border-color:var(--gold-600); background:var(--gold-500);}
+.accordion-item.is-open .accordion-icon::before,
+.accordion-item.is-open .accordion-icon::after{background:var(--cream-100);}
+
+.accordion-panel{
+  display:grid;
+  grid-template-rows:0fr;
+  transition:grid-template-rows .55s cubic-bezier(.65,0,.35,1);
+}
+.accordion-item.is-open .accordion-panel{grid-template-rows:1fr;}
+.accordion-panel-inner{
+  overflow:hidden;
+  min-height:0;
+  padding:0 30px 34px;
+}
+.accordion-menu-group{margin-top:22px;}
+.accordion-menu-group:first-child{margin-top:4px;}
+.accordion-menu-group h4{
+  font-family:var(--font-body);
+  font-size:.7rem;
+  letter-spacing:var(--tracking-mid);
+  text-transform:uppercase;
+  color:var(--gold-600);
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  border-bottom:1px solid var(--stone-200);
+  padding-bottom:8px;
+  margin-bottom:10px;
+}
+.accordion-menu-group h4 span{color:var(--ink-500); font-style:italic; text-transform:none; letter-spacing:0;}
+.accordion-menu-list{list-style:none; margin:0; padding:0;}
+.accordion-menu-list li{
+  padding:9px 0;
+  border-bottom:1px dashed var(--stone-200);
+  display:flex;
+  flex-direction:column;
+  gap:2px;
+}
+.accordion-menu-list li:last-child{border-bottom:none;}
+.accordion-menu-list li strong{
+  font-family:var(--font-display);
+  font-size:1.05rem;
+  font-weight:500;
+  color:var(--ink-900);
+}
+.accordion-menu-list li em{
+  font-family:var(--font-body);
+  font-style:italic;
+  font-size:.86rem;
+  color:var(--ink-500);
+}
+@media (prefers-reduced-motion: reduce){
+  .accordion-panel{transition:none;}
+}
+@media (max-width:600px){
+  .accordion-trigger{padding:20px 20px;}
+  .accordion-panel-inner{padding:0 20px 26px;}
+  .accordion-title{font-size:1.2rem;}
+}
+
+/* ============================================================
    Menu page
    ============================================================ */
 .menu-tabs{
@@ -725,12 +850,12 @@ section{padding:120px 0;}
 }
 .event-card:hover::before{transform:scale(1.08); opacity:.62;}
 .event-card > *{position:relative; z-index:2;}
-.ec-yacht::before{background-image:url("../images/yacht-sunset-dock.jpg");}
+.ec-yacht::before{background-image:url("../images/yacht-chef-sunset-plating.jpg");}
 .ec-intl::before{background-image:url("../images/event-buffet-celebration.jpg");}
-.ec-gala::before{background-image:url("../images/table-setting-candlelight.jpg");}
-.ec-household::before{background-image:url("../images/chef-kitchen-dessert.jpg");}
-.ec-private-corp::before{background-image:url("../images/crab-carpaccio.jpg");}
-.ec-cocktail::before{background-image:url("../images/event-cocktail-bar.jpg");}
+.ec-gala::before{background-image:url("../images/gala-dinner-place-setting.jpg");}
+.ec-household::before{background-image:url("../images/table-setting-candlelight.jpg");}
+.ec-private-corp::before{background-image:url("../images/private-corporate-catering-table.jpg");}
+.ec-cocktail::before{background-image:url("../images/cocktail-bar-service-new.jpg");}
 
 /* process steps */
 .process{

@@ -249,6 +249,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  /* ---------- Sample menu accordion ---------- */
+  document.querySelectorAll('.accordion-item').forEach(item => {
+    const trigger = item.querySelector('.accordion-trigger');
+    if (!trigger) return;
+    trigger.addEventListener('click', () => {
+      const isOpen = item.classList.contains('is-open');
+      // close any sibling accordion items within the same list for a clean one-at-a-time feel
+      const list = item.closest('.accordion-list');
+      if (list) {
+        list.querySelectorAll('.accordion-item.is-open').forEach(other => {
+          if (other !== item) {
+            other.classList.remove('is-open');
+            const otherTrigger = other.querySelector('.accordion-trigger');
+            if (otherTrigger) otherTrigger.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+      item.classList.toggle('is-open', !isOpen);
+      trigger.setAttribute('aria-expanded', String(!isOpen));
+    });
+  });
+
   /* ---------- Scroll reveal ---------- */
   const revealEls = document.querySelectorAll('.reveal, .reveal-wipe, .reveal-scale');
   if ('IntersectionObserver' in window) {
