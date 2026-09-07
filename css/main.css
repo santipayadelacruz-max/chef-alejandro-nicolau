@@ -284,6 +284,17 @@ p{margin:0;}
   .main-nav ul{flex-direction:column; gap:26px;}
   .main-nav .nav-cta{margin-top:30px;}
   .nav-toggle{display:flex;}
+  .logo{
+    white-space:normal;
+    font-size:1.02rem;
+    letter-spacing:.12em;
+    gap:9px;
+    max-width:calc(100% - 60px);
+  }
+  .brand-mark{width:32px; height:32px; flex-shrink:0;}
+}
+@media (max-width:400px){
+  .logo{font-size:.9rem; letter-spacing:.08em;}
 }
 
 /* ============================================================
