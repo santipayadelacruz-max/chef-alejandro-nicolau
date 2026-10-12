@@ -37,7 +37,7 @@
 }
 
 *,*::before,*::after{box-sizing:border-box;}
-html{scroll-behavior:smooth;}
+html{scroll-behavior:smooth; overflow-x:hidden; overflow-x:clip; max-width:100%;}
 body{
   margin:0;
   background:var(--stone-100);
@@ -47,6 +47,8 @@ body{
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
+  overflow-x:clip;
+  max-width:100%;
 }
 img{max-width:100%;height:auto;display:block;}
 a{color:inherit;text-decoration:none;}
@@ -278,9 +280,10 @@ p{margin:0;}
     justify-content:center;
     padding:60px 44px;
     transform:translateX(100%);
-    transition:transform .5s var(--ease);
+    visibility:hidden;
+    transition:transform .5s var(--ease), visibility 0s linear .5s;
   }
-  .main-nav.is-open{transform:translateX(0);}
+  .main-nav.is-open{transform:translateX(0); visibility:visible; transition:transform .5s var(--ease), visibility 0s;}
   .main-nav ul{flex-direction:column; gap:26px;}
   .main-nav .nav-cta{margin-top:30px;}
   .nav-toggle{display:flex;}
@@ -1831,3 +1834,14 @@ section.blog-wrap{padding:56px 0 0;}
 @media (max-width:920px), (hover:none){ .page-curtain{display:none !important;} }
 
 .blog-grid .blog-card[hidden]{display:none !important;}
+
+/* location pages: map moved to the end, copy + facts side by side, dish carousel */
+.loc-top{grid-template-columns:1fr;}
+.loc-top-copy{display:grid; grid-template-columns:1fr 1fr; column-gap:44px; align-items:start;}
+.loc-top-copy>*{grid-column:1;}
+.loc-top-copy>.facts-card{grid-column:2; grid-row:1 / span 4; margin-top:0;}
+@media (max-width:920px){ .loc-top-copy{grid-template-columns:1fr;} .loc-top-copy>.facts-card{grid-column:1; grid-row:auto; margin-top:22px;} }
+.loc-map-wide{max-width:760px; margin-inline:auto;}
+.loc-map-block .block-head{text-align:center;}
+.loc-map-block .block-head .eyebrow{justify-content:center;}
+.loc-map-block .block-head{align-items:center;}
