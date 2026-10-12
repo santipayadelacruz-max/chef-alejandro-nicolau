@@ -114,11 +114,18 @@ document.addEventListener('DOMContentLoaded', () => {
     a.addEventListener('click', (e) => {
       const href = a.getAttribute('href');
       if (!href || href.startsWith('http') || a.target === '_blank') return;
+      if (a.hasAttribute('data-filter')) return; // handled by the journal filter
+      try { const u = new URL(a.href, location.href); if (u.pathname === location.pathname) return; } catch (_) {}
+      // Fade-out only on desktop with a mouse; on touch devices navigate natively
+      if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return;
       e.preventDefault();
       document.body.classList.add('is-navigating');
       document.body.style.transition = 'opacity .35s ease';
       document.body.style.opacity = '0';
       setTimeout(() => { window.location.href = href; }, 320);
+      // safety net: never leave the page invisible if the navigation does not happen
+      setTimeout(() => { document.body.style.opacity = '1'; document.body.classList.remove('is-navigating'); }, 3000);
     });
   });
 
@@ -271,6 +278,40 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* ---------- Location pages: scroll transitions on each block ---------- */
+  if (/\/locations\//.test(location.pathname) && !reduceMotion) {
+    const groups = [
+      ['.page-block .block-head', 'reveal'],
+      ['.loc-stats .stat', 'reveal'],
+      ['.glance-list > *', 'reveal'],
+      ['.topic-grid .topic', 'reveal'],
+      ['.page-block .step, .page-block .process > *', 'reveal'],
+      ['.page-block .chip', 'reveal'],
+      ['.gal-item', 'reveal-scale'],
+      ['.svc-card', 'reveal'],
+      ['.near-card', 'reveal']
+    ];
+    groups.forEach(([sel, cls]) => {
+      document.querySelectorAll(sel).forEach((el, i) => {
+        if (el.classList.contains('reveal') || el.classList.contains('reveal-scale')) return;
+        el.classList.add(cls);
+        el.style.transitionDelay = `${(i % 6) * 80}ms`;
+      });
+    });
+  }
+
+  /* ---------- Event-card backgrounds: load only when near the viewport ---------- */
+  (function(){
+    const cards = document.querySelectorAll('.event-card');
+    if (!cards.length) return;
+    const on = el => el.classList.add('bg-on');
+    if ('IntersectionObserver' in window) {
+      const bo = new IntersectionObserver((es) => es.forEach(e => { if (e.isIntersecting) { on(e.target); bo.unobserve(e.target); } }), { rootMargin: '600px 0px' });
+      cards.forEach(el => bo.observe(el));
+    } else { cards.forEach(on); }
+    setTimeout(() => cards.forEach(on), 6000);
+  })();
+
   /* ---------- Scroll reveal ---------- */
   const revealEls = document.querySelectorAll('.reveal, .reveal-wipe, .reveal-scale');
   if ('IntersectionObserver' in window) {
@@ -401,3 +442,24 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+
+
+/* ---------- Journal category filter (no reload) ---------- */
+(function () {
+  const bar = document.querySelector('.blog-filter-bar');
+  if (!bar) return;
+  const links = [...bar.querySelectorAll('a[data-filter]')];
+  const cards = [...document.querySelectorAll('.blog-grid .blog-card[data-category]')];
+  const apply = (key, push) => {
+    if (!links.some(l => l.dataset.filter === key)) key = 'all';
+    links.forEach(l => l.classList.toggle('is-active', l.dataset.filter === key));
+    cards.forEach(c => {
+      const show = key === 'all' || c.dataset.category === key;
+      c.hidden = !show;
+      if (show) c.classList.add('is-visible');
+    });
+    if (push) { try { history.replaceState(null, '', key === 'all' ? location.pathname : '#' + key); } catch (_) {} }
+  };
+  links.forEach(l => l.addEventListener('click', e => { e.preventDefault(); apply(l.dataset.filter, true); }));
+  apply(location.hash.replace('#', '') || 'all', false);
+})();
