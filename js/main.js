@@ -463,3 +463,49 @@ document.addEventListener('DOMContentLoaded', () => {
   links.forEach(l => l.addEventListener('click', e => { e.preventDefault(); apply(l.dataset.filter, true); }));
   apply(location.hash.replace('#', '') || 'all', false);
 })();
+
+/* ---------- Reviews carousel: arrows + gentle autoplay on top of native scroll-snap ---------- */
+(function () {
+  document.querySelectorAll('[data-rev]').forEach(function (wrap) {
+    var track = wrap.querySelector('.rev-track');
+    if (!track) return;
+    var cards = track.children;
+    var nav = document.createElement('div');
+    nav.className = 'rev-nav';
+    nav.innerHTML = '<button type="button" aria-label="Previous review">&#8592;</button><button type="button" aria-label="Next review">&#8594;</button>';
+    wrap.appendChild(nav);
+    var prev = nav.children[0], next = nav.children[1];
+    wrap.classList.add('is-enhanced');
+    function step() { return cards.length > 1 ? cards[1].offsetLeft - cards[0].offsetLeft : track.clientWidth; }
+    function update() {
+      var max = track.scrollWidth - track.clientWidth - 2;
+      prev.disabled = track.scrollLeft <= 2;
+      next.disabled = track.scrollLeft >= max;
+    }
+    prev.addEventListener('click', function () { track.scrollBy({ left: -step(), behavior: 'smooth' }); });
+    next.addEventListener('click', function () { track.scrollBy({ left: step(), behavior: 'smooth' }); });
+    track.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) return;
+    var timer = null, visible = false, held = false;
+    function tick() {
+      var max = track.scrollWidth - track.clientWidth - 2;
+      if (track.scrollLeft >= max) track.scrollTo({ left: 0, behavior: 'smooth' });
+      else track.scrollBy({ left: step(), behavior: 'smooth' });
+    }
+    function sync() {
+      var should = visible && !held && !document.hidden;
+      if (should && !timer) timer = setInterval(tick, 5500);
+      if (!should && timer) { clearInterval(timer); timer = null; }
+    }
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (es) { visible = es[0].isIntersecting; sync(); }, { threshold: 0.35 }).observe(wrap);
+    }
+    ['mouseenter', 'focusin', 'touchstart', 'pointerdown'].forEach(function (ev) { wrap.addEventListener(ev, function () { held = true; sync(); }, { passive: true }); });
+    wrap.addEventListener('mouseleave', function () { held = false; sync(); });
+    document.addEventListener('visibilitychange', sync);
+  });
+})();
